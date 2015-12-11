@@ -35,12 +35,14 @@ SOLUTION:
 def main():
 	print (GetTotalWrappingPaper(ParseStringListIntoDataList(GetInputAsStringList())))
 
+
 def GetInputAsStringList():
 
 	with open('Input/DayTwoInput') as f:
 		content = f.readlines()
 
 	return content
+
 
 #returns list of [l,w,h] to be counted
 def ParseStringListIntoDataList(stringList):
@@ -59,7 +61,6 @@ def ParseStringListIntoDataList(stringList):
 	return newDataList
 
 
-
 def GetTotalWrappingPaper(dimensionsList):
 
 	totalPaper = 0;
@@ -68,7 +69,6 @@ def GetTotalWrappingPaper(dimensionsList):
 		totalPaper += GetWrappingPaperNeedForIndividualPresent(dimensions[0], dimensions[1], dimensions[2])
 
 	return(totalPaper)
-
 
 
 def GetWrappingPaperNeedForIndividualPresent(length, width, height):

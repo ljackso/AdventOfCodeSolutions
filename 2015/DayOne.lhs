@@ -46,6 +46,3 @@ SOLUTION:
 > findFloor n []		= n
 > findFloor n (c:cs) 	| ( c == '(' )		= findFloor (n+1) cs
 >						| ( c == ')' )		= findFloor (n-1) cs
->						| otherwise 		= 999
-
-
