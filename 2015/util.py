@@ -16,3 +16,6 @@ def get_file_as_list_of_strings(file_name):
 		content = f.readlines()
 
 	return content
+
+def enum(**enums):
+    return type('Enum', (), enums)
