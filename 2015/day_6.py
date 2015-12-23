@@ -45,9 +45,11 @@ Instructions = util.enum(TOGGLE = 0, ON = 1, OFF = 2)
 roof_lights = []
 
 def main():
+	global ON
+	global OFF
 	global roof_lights
 
-	roof_lights = [[True for l in range(0,1000)] for j in range(0, 1000)]
+	roof_lights = [[OFF for l in range(0,1000)] for j in range(0, 1000)]
 
 	string_list_instructions = util.get_file_as_list_of_strings('Input/day_6_input.txt') 
 
@@ -75,11 +77,13 @@ def consume_string_instruction(instruction):
 		end_point_strings = words[3].split(",")
 		end_point = (int(end_point_strings[0]), int(end_point_strings[1]))
 
-	else:
+	elif (words[0] == "turn"):
 		if (words[1] == "off"):
 			instr_type = Instructions.OFF
 		elif (words[1] == "on"):
 			instr_type = Instructions.ON
+		else :
+			print("OH SHIT " + instruction)
 
 		start_point_strings = words[2].split(",")
 		start_point = (int(start_point_strings[0]), int(start_point_strings[1]))
